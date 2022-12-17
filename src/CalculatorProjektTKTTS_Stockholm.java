@@ -13,7 +13,7 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
 
 
 
-        private JButton buttonZero;
+        JButton buttonZero;
         private JButton buttonOne;
         private JButton buttonTwo;
         private JButton buttonThree;
@@ -34,9 +34,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
         double firstNumber;
         double secondNumber;
         private String operation;
-
-        private String answer;
-        private String number;
         double summa;
 
 
@@ -49,7 +46,7 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
             panel = new JPanel();
             frame = new JFrame();
             flowLayout = new FlowLayout();
-            textArea = new JTextArea(1,10);
+            textArea = new JTextArea(1,14);
 
 
 
@@ -70,16 +67,33 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
             buttonDivision = new JButton("/");
             buttonSumma = new JButton("=");
 
+            buttonOne.setBackground(Color.LIGHT_GRAY);
+            buttonTwo.setBackground(Color.LIGHT_GRAY);
+            buttonThree.setBackground(Color.LIGHT_GRAY);
+            buttonFour.setBackground(Color.LIGHT_GRAY);
+            buttonFive.setBackground(Color.LIGHT_GRAY);
+            buttonSix.setBackground(Color.LIGHT_GRAY);
+            buttonSeven.setBackground(Color.LIGHT_GRAY);
+            buttonEight.setBackground(Color.LIGHT_GRAY);
+            buttonNine.setBackground(Color.LIGHT_GRAY);
+            buttonZero.setBackground(Color.LIGHT_GRAY);
+            buttonPlus.setBackground(Color.LIGHT_GRAY);
+            buttonMinus.setBackground(Color.LIGHT_GRAY);
+            buttonDivision.setBackground(Color.LIGHT_GRAY);
+            buttonMultiplication.setBackground(Color.LIGHT_GRAY);
+            buttonSumma.setBackground(Color.LIGHT_GRAY);
 
-            frame.setSize(800,120);
+
+            frame.setSize(200,270);
             frame.setVisible(true);
+            frame.setTitle("Calculator");
             frame.add(panel);
 
             panel.setVisible(true);
+            panel.setBackground(Color.BLACK);
             panel.setLayout(new FlowLayout(FlowLayout.CENTER,10,10));
 
             panel.add(textArea);
-            panel.add(buttonZero);
             panel.add(buttonOne);
             panel.add(buttonTwo);
             panel.add(buttonThree);
@@ -89,12 +103,13 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
             panel.add(buttonSeven);
             panel.add(buttonEight);
             panel.add(buttonNine);
+            panel.add(buttonZero);
             panel.add(buttonPlus);
             panel.add(buttonMinus);
             panel.add(buttonMultiplication);
             panel.add(buttonDivision);
             panel.add(buttonSumma);
-            panel.add(textArea);
+
 
 
 
@@ -244,13 +259,32 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String answer;
+                    String newAnswer;
                     secondNumber = Double.parseDouble(textArea.getText());
                     if (operation == "+"){
                         summa = firstNumber + secondNumber;
                         answer = String.format("%.2f", summa);
                         textArea.setText(answer);
+                    }else if (operation == "-"){
+                        summa = firstNumber - secondNumber;
+                        answer = String.format("%.2f", summa);
+                        textArea.setText(answer);
+                    }else if (operation == "*"){
+                        summa = firstNumber * secondNumber;
+                        answer = String.format("%.2f", summa);
+                        textArea.setText(answer);
+                    } else if (operation == "/"){
+
+                        if (secondNumber == 0) {
+                            newAnswer = String.format("%.2f", firstNumber);
+                            textArea.setText(newAnswer);
+                        } else {
+                            summa = firstNumber / secondNumber;
+                            answer = String.format("%.2f", summa);
+                            textArea.setText(answer);
                     }
-                }
+
+                }}
             });
 
 
