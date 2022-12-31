@@ -5,67 +5,30 @@ import java.awt.event.ActionListener;
 
 public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
 
+    Calculation calculation = new Calculation();
+    double firstNumber, secondNumber, summa;
+    private String operation;
+    private JButton buttonZero = new JButton("0"), buttonOne = new JButton("1"), buttonTwo = new JButton("2"),
+            buttonThree = new JButton("3"), buttonFour = new JButton("4"), buttonFive = new JButton("5"),
+            buttonSix = new JButton("6"), buttonSeven = new JButton("7"), buttonEight = new JButton("8"),
+            buttonNine = new JButton("9"), buttonPlus = new JButton("+"), buttonMinus = new JButton("-"),
+            buttonMultiplication = new JButton("*"), buttonDivision = new JButton("/"), buttonSumma = new JButton("=");
 
-        private JFrame frame;
-        private JPanel panel;
-        private JTextArea textArea;
-        private FlowLayout flowLayout;
-
-
-
-        JButton buttonZero;
-        private JButton buttonOne;
-        private JButton buttonTwo;
-        private JButton buttonThree;
-        private JButton buttonFour;
-        private JButton buttonFive;
-        private JButton buttonSix;
-        private JButton buttonSeven;
-        private JButton buttonEight;
-        private JButton buttonNine;
-        private JButton buttonPlus;
-        private JButton buttonMinus;
-        private JButton buttonMultiplication;
-        private JButton buttonDivision;
-        private JButton buttonSumma;
+        CalculatorProjektTKTTS_Stockholm() {
 
 
+            JTextArea textArea = new JTextArea();
 
-        double firstNumber;
-        double secondNumber;
-        private String operation;
-        double summa;
+            JPanel panel = new JPanel();
+            panel.setVisible(true);
+            panel.setBackground(Color.BLACK);
+            panel.setLayout(new GridLayout(4,4,5,5));
 
-
-
-
-
-        CalculatorProjektTKTTS_Stockholm(){
-
-
-            panel = new JPanel();
-            frame = new JFrame();
-            flowLayout = new FlowLayout();
-            textArea = new JTextArea(1,14);
-
-
-
-
-            buttonZero = new JButton("0");
-            buttonOne = new JButton("1");
-            buttonTwo = new JButton("2");
-            buttonThree = new JButton("3");
-            buttonFour = new JButton("4");
-            buttonFive = new JButton("5");
-            buttonSix = new JButton("6");
-            buttonSeven = new JButton("7");
-            buttonEight = new JButton("8");
-            buttonNine = new JButton("9");
-            buttonPlus = new JButton("+");
-            buttonMinus = new JButton("-");
-            buttonMultiplication = new JButton("*");
-            buttonDivision = new JButton("/");
-            buttonSumma = new JButton("=");
+            JFrame frame = new JFrame();
+            frame.setSize(300, 370);
+            frame.setVisible(true);
+            frame.setTitle("Calculator");
+            frame.add(panel);
 
             buttonOne.setBackground(Color.LIGHT_GRAY);
             buttonTwo.setBackground(Color.LIGHT_GRAY);
@@ -82,16 +45,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
             buttonDivision.setBackground(Color.LIGHT_GRAY);
             buttonMultiplication.setBackground(Color.LIGHT_GRAY);
             buttonSumma.setBackground(Color.LIGHT_GRAY);
-
-
-            frame.setSize(200,270);
-            frame.setVisible(true);
-            frame.setTitle("Calculator");
-            frame.add(panel);
-
-            panel.setVisible(true);
-            panel.setBackground(Color.BLACK);
-            panel.setLayout(new FlowLayout(FlowLayout.CENTER,10,10));
 
             panel.add(textArea);
             panel.add(buttonOne);
@@ -111,9 +64,7 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
             panel.add(buttonSumma);
 
 
-
-
-            buttonZero.addActionListener(new ActionListener() {
+             buttonZero.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonZero.getText();
@@ -121,13 +72,11 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 }
             });
 
-            buttonOne.addActionListener(new ActionListener() {
+           buttonOne.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText()+buttonOne.getText();
                     textArea.setText(number);
-                    //System.out.print("1");
-                    //textArea.append("1");
                 }
             });
 
@@ -136,8 +85,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonTwo.getText();
                     textArea.setText(number);
-                    //System.out.print("2");
-                    //textArea.append("2");
                 }
             });
 
@@ -146,8 +93,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonThree.getText();
                     textArea.setText(number);
-                    //System.out.print("3");
-                    //textArea.append("3");
                 }
             });
 
@@ -156,8 +101,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonFour.getText();
                     textArea.setText(number);
-                    //System.out.print("4");
-                    //textArea.append("4");
                 }
             });
 
@@ -166,8 +109,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonFive.getText();
                     textArea.setText(number);
-                    //System.out.print("5");
-                    //textArea.append("5");
                 }
             });
 
@@ -176,8 +117,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonSix.getText();
                     textArea.setText(number);
-                    //System.out.print("6");
-                    //textArea.append("6");
                 }
             });
 
@@ -186,8 +125,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonSeven.getText();
                     textArea.setText(number);
-                    //System.out.print("7");
-                    //textArea.append("7");
                 }
             });
 
@@ -196,8 +133,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonEight.getText();
                     textArea.setText(number);
-                    //System.out.print("8");
-                    //textArea.append("8");
                 }
             });
 
@@ -206,8 +141,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                     String number = textArea.getText() + buttonNine.getText();
                     textArea.setText(number);
-                    //System.out.print("9");
-                    //textArea.append("9");
                 }
             });
 
@@ -217,8 +150,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                     firstNumber = Double.parseDouble(textArea.getText());
                     textArea.setText("");
                     operation = "+";
-                    //System.out.print("+");
-                    //textArea.append("+");
                 }
             });
 
@@ -228,19 +159,6 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                     firstNumber = Double.parseDouble(textArea.getText());
                     textArea.setText("");
                     operation = "-";
-                    //System.out.print("-");
-                    //textArea.append("-");
-                }
-            });
-
-            buttonMultiplication.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    firstNumber = Double.parseDouble(textArea.getText());
-                    textArea.setText("");
-                    operation = "*";
-                    //System.out.print("*");
-                    //textArea.append("*");
                 }
             });
 
@@ -250,52 +168,55 @@ public class CalculatorProjektTKTTS_Stockholm implements ActionListener {
                     firstNumber = Double.parseDouble(textArea.getText());
                     textArea.setText("");
                     operation = "/";
-                    //System.out.print("/");
-                    //textArea.append("/");
                 }
             });
 
-            buttonSumma.addActionListener(new ActionListener() {
+            buttonMultiplication.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String answer;
-                    String newAnswer;
-                    secondNumber = Double.parseDouble(textArea.getText());
-                    if (operation == "+"){
-                        summa = firstNumber + secondNumber;
-                        answer = String.format("%.2f", summa);
-                        textArea.setText(answer);
-                    }else if (operation == "-"){
-                        summa = firstNumber - secondNumber;
-                        answer = String.format("%.2f", summa);
-                        textArea.setText(answer);
-                    }else if (operation == "*"){
-                        summa = firstNumber * secondNumber;
-                        answer = String.format("%.2f", summa);
-                        textArea.setText(answer);
-                    } else if (operation == "/"){
+                    firstNumber = Double.parseDouble(textArea.getText());
+                    textArea.setText("");
+                    operation = "*";}
+            });
 
+
+            buttonSumma.addActionListener(new ActionListener() {
+                @Override
+
+                   public void actionPerformed(ActionEvent e) {
+                    String answer;
+
+                    secondNumber = Double.parseDouble(textArea.getText());
+                    if (operation == "+") {
+                        summa = calculation.operatorPlus(firstNumber, secondNumber);
+                        answer = String.format("%.2f", summa);
+                        textArea.setText(answer);
+
+                    }else if (operation == "-"){
+                        summa = calculation.operatorMinus(firstNumber, secondNumber);
+                        answer = String.format("%.2f", summa);
+                        textArea.setText(answer);
+
+                    }else if (operation == "*"){
+                        summa = calculation.operatorMultiplication(firstNumber, secondNumber);
+                        answer = String.format("%.2f", summa);
+                        textArea.setText(answer);
+
+                    } else if (operation == "/"){
+                        summa = calculation.operatorDivision(firstNumber, secondNumber);
                         if (secondNumber == 0) {
-                            newAnswer = String.format("%.2f", firstNumber);
-                            textArea.setText(newAnswer);
+                            textArea.setText("Cannot divide by zero");
                         } else {
-                            summa = firstNumber / secondNumber;
+                            summa = calculation.operatorDivision(firstNumber, secondNumber);
                             answer = String.format("%.2f", summa);
                             textArea.setText(answer);
                     }
 
                 }}
             });
-
-
-
-
         }
 
-
-        @Override
+    @Override
         public void actionPerformed(ActionEvent e) {
-
         }
     }
-
