@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf90c11d-2133-4025-8be2-4a28d49adce2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Calculation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CalculationBackEndOperators.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CalculationFramePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calculation.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CalculatorProjektTKTTS_Stockholm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalculatorProjektTKTTS_Stockholm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -82,5 +83,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
